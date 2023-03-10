@@ -32,6 +32,14 @@ public class ApiTests {
         Assert.assertTrue(usdtTickers.stream().allMatch(x->x.getSymbol().endsWith("USDT")));
         int i = 0;
     }
+    @Test
+    public void getALlUSDTTickersNew () {
+        List<TickerData> usdtTickers = getAllTickers().stream().filter(x->x.getSymbol().endsWith("USDT")).collect(Collectors.toList());
+        Assert.assertTrue(usdtTickers.stream().allMatch(x->x.getSymbol().endsWith("USDT")));
+        int i = 0;
+    }
+
+
 
     @Test
     public void getFromHighToLowChangeRate () {
